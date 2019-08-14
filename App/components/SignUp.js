@@ -85,6 +85,7 @@ class SignUp extends Component {
             <Text style={{fontWeight:'bold'}}>  SIGN IN</Text>
           </TouchableOpacity>
           <TouchableOpacity></TouchableOpacity>
+          
         </View>
       </View>
     );
