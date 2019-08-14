@@ -32,9 +32,11 @@ class Landing extends Component {
           <Image source={Imgg} />
           <Image source={require('../../assets/LetsWorship.png')} />
         </View>
-        <View style={styles.footer}>
-          <Image source={Img} />
+        {/* <View style={styles.footer}>
+          <Image source={Img} style={{ flex: 1, position: 'relative', height: '100%'}} resizeMode='contain' />
         </View>
+         */}
+         <ImageBackground source={Img} style={{flex:1}}></ImageBackground>
       </View>
     );
   }
@@ -42,26 +44,31 @@ class Landing extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    
+
     flex: 1,
     flexDirection: 'column',
-    
+    alignItems: 'stretch'
+
   },
   footer: {
-    
+
     flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'stretch',
-    height: 250,
-    elevation: 500
+    flexDirection: 'column',
+    // justifyContent: 'flex-end',
+    // alignItems: 'stretch',
+    height: '100%',
+    elevation: 500,
+    // backgroundColor: 'green',
+    overflow: 'hidden'
   },
   logo: {
-    
-    flex: 4,
+
+    flex: 5,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
     alignSelf: 'center',
+    width: '100%'
   }
 });
 

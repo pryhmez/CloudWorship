@@ -9,6 +9,7 @@ import {
   Text,
   StatusBar,
   TouchableOpacity,
+  // TextInput,
   Image,
   ImageBackground,
 } from 'react-native';

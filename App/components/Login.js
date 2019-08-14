@@ -24,6 +24,13 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
 
   render() {
     // console.warn(Img)
@@ -62,6 +69,15 @@ class Login extends Component {
           </TouchableOpacity>
         </View>
 
+        <View>
+          
+          <TouchableOpacity style={{flexDirection: 'row', margin: 8}}>
+            <Text style={{color: '#FF4C82'}}>NEW USER?</Text>
+            <Text style={{fontWeight:'bold'}}>  SIGN UP</Text>
+          </TouchableOpacity>
+          <TouchableOpacity></TouchableOpacity>
+          
+        </View>
 
       </View>
     );
