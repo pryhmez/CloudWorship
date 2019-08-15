@@ -36,7 +36,7 @@ class Landing extends Component {
           <Image source={Img} style={{ flex: 1, position: 'relative', height: '100%'}} resizeMode='contain' />
         </View>
          */}
-         <ImageBackground source={Img} style={{flex:1}}></ImageBackground>
+         <ImageBackground source={Img} style={{flex:1}} resizeMode='stretch'></ImageBackground>
       </View>
     );
   }

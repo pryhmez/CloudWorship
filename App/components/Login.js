@@ -73,7 +73,7 @@ class Login extends Component {
           
           <TouchableOpacity style={{flexDirection: 'row', margin: 8}}>
             <Text style={{color: '#FF4C82'}}>NEW USER?</Text>
-            <Text style={{fontWeight:'bold'}}>  SIGN UP</Text>
+            <Text style={{fontWeight:'bold', color: '#970044'}}>  SIGN UP</Text>
           </TouchableOpacity>
           <TouchableOpacity></TouchableOpacity>
           
@@ -86,14 +86,15 @@ class Login extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     flex: 1,
     // flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    // backgroundColor: '#E5E5E5'
   },
   inputBox: {
     width: 300,
-    backgroundColor: '#ffffff',
+    backgroundColor: 'transparent',
     // borderRadius: 25,
     paddingHorizontal: 16,
     fontSize: 16,
@@ -105,7 +106,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#4f83cc',
     borderRadius: 7,
     marginVertical: 10,
-    paddingVertical: 12
+    paddingVertical: 12,
+    elevation: 200
   },
   buttonText: {
     fontSize: 16,
