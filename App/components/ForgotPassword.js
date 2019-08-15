@@ -37,7 +37,7 @@ class ForgotPassword extends Component {
     // console.warn(Img)
     return (
       <View style={styles.container}>
-        <View style={{flex: 7 }}>
+        <View style={{flex: 7, marginTop: 30 }}>
           <View style={styles.header}>
             <Text style={styles.headertext}>Forgot Password?</Text>
             <Image source={require('../../assets/forgotpassimgg.png')} style={styles.headerImg} resizeMode='contain' />
@@ -57,7 +57,7 @@ class ForgotPassword extends Component {
               ref={(input) => this.password = input}
             />
             <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText} onPress={this.saveData}>{this.props.type}SignUp</Text>
+              <Text style={styles.buttonText} onPress={this.saveData}>{this.props.type}Send</Text>
             </TouchableOpacity>
           </View>
           <View style={{ flex: 1, backgroundColor: 'transparent', }}>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     margin: 10,
     fontSize: 24,
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: 30,
     height: 40,
   },
   headerImg: {
