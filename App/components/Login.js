@@ -70,15 +70,14 @@ saveData = ()=> {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText} onPress={() => this.props.navigation.navigate('Home')}>{this.props.type}SignIn</Text>
+            <Text style={styles.buttonText} onPress={this.doLogin}>{this.props.type}SignIn</Text>
           </TouchableOpacity>
         </View>
 
         <View>
 
-          <TouchableOpacity style={{ flexDirection: 'row', margin: 20 }} >
-            <Text style={{ color: '#FF4C82' }} title="Go to Details"
-              onPress={() => this.props.navigation.navigate('SignUp')}>NEW USER?</Text>
+          <TouchableOpacity style={{ flexDirection: 'row', margin: 20 }} onPress={() => this.props.navigation.navigate('SignUp')}>
+            <Text style={{ color: '#FF4C82' }} title="Go to Details">NEW USER?</Text>
             <Text style={{ fontWeight: 'bold', color: '#970044' }}>  SIGN UP</Text>
           </TouchableOpacity>
           <TouchableOpacity></TouchableOpacity>
@@ -88,6 +87,8 @@ saveData = ()=> {
       </View>
     );
   }
+
+  doLogin = () => { this.props.navigation.navigate('Home')}
 };
 
 const styles = StyleSheet.create({

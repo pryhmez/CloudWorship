@@ -114,13 +114,17 @@ const Navs = createStackNavigator({
     navigationOptions: {
       header: null
     },
+ 
+  },
   UserProfile: {
-    screen: UserProfile
-  }
-  }
+    screen: UserProfile,
+    navigationOptions: {
+      header: null
+    },
+  },
 },
   {
-    initialRouteName: 'UserProfile',
+    // initialRouteName: 'UserProfile',
     // defaultNavigationOptions: {
     //   headerStyle: {
     //     backgroundColor: '#f4511e',

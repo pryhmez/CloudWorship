@@ -39,7 +39,7 @@ class SignUp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../../assets/SignupHeader.png')} style={styles.headerImg}>
+        <ImageBackground source={require('../../assets/signupHeader.png')} style={styles.headerImg}>
           <View style={styles.headerText}>
             <Text style={styles.createAcct}>Create Account</Text>
           </View>

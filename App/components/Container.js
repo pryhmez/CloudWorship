@@ -58,7 +58,7 @@ class Container extends Component {
                         <Ionicons name="ios-search" color='#fee2e9' size={24} />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.userIcon} onPress={() => this.props.navigation.navigate('UserProfile')}>
+                    <TouchableOpacity style={styles.userIcon} onPress={() => this.props.navigation.push('UserProfile')}>
                         <Ionicons name="ios-person" color='#fee2e9' size={24} />
                         
                     </TouchableOpacity>
