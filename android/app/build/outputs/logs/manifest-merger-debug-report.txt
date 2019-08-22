@@ -5,7 +5,9 @@ INJECTED from /home/prime/ReactNativeProjects/CloudWorship/android/app/src/main/
 INJECTED from /home/prime/ReactNativeProjects/CloudWorship/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /home/prime/ReactNativeProjects/CloudWorship/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from /home/prime/ReactNativeProjects/CloudWorship/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-vector-icons] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.60.4] /home/prime/.gradle/caches/transforms-2/files-2.1/7cf5777b8022fc3db90cd05aa8caba2c/AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r245459] /home/prime/.gradle/caches/transforms-2/files-2.1/b1272623d44b649fe39d0a56049df85f/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] /home/prime/.gradle/caches/transforms-2/files-2.1/ba7376bd73a143fd09541e4a22aa3b72/AndroidManifest.xml:17:1-22:12
@@ -17,6 +19,7 @@ MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /home/prime/.gradle/caches
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/4a5991ada64a273671f6216b997b0700/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/030114c1c7633199d7d62935a6426d32/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.soloader:soloader:0.6.0] /home/prime/.gradle/caches/transforms-2/files-2.1/bd3074544c3843875a082dc6040793fd/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.transition:transition:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/edfbd2819e0e9b3a875236a5d27f5ed8/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/9422a65895db26a970077b44380c8f76/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/a4d780383634989233f43cdf82df70c7/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/0f6536da8fd90992402ed6a9a6e605d8/AndroidManifest.xml:17:1-22:12
@@ -133,8 +136,12 @@ uses-sdk
 INJECTED from /home/prime/ReactNativeProjects/CloudWorship/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/prime/ReactNativeProjects/CloudWorship/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/prime/ReactNativeProjects/CloudWorship/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-vector-icons] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /home/prime/ReactNativeProjects/CloudWorship/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.60.4] /home/prime/.gradle/caches/transforms-2/files-2.1/7cf5777b8022fc3db90cd05aa8caba2c/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.60.4] /home/prime/.gradle/caches/transforms-2/files-2.1/7cf5777b8022fc3db90cd05aa8caba2c/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /home/prime/.gradle/caches/transforms-2/files-2.1/b1272623d44b649fe39d0a56049df85f/AndroidManifest.xml:7:5-9:41
@@ -157,6 +164,8 @@ MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/prime/.gradle/c
 MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/030114c1c7633199d7d62935a6426d32/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.soloader:soloader:0.6.0] /home/prime/.gradle/caches/transforms-2/files-2.1/bd3074544c3843875a082dc6040793fd/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.soloader:soloader:0.6.0] /home/prime/.gradle/caches/transforms-2/files-2.1/bd3074544c3843875a082dc6040793fd/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.transition:transition:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/edfbd2819e0e9b3a875236a5d27f5ed8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/edfbd2819e0e9b3a875236a5d27f5ed8/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/9422a65895db26a970077b44380c8f76/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/9422a65895db26a970077b44380c8f76/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /home/prime/.gradle/caches/transforms-2/files-2.1/a4d780383634989233f43cdf82df70c7/AndroidManifest.xml:20:5-44

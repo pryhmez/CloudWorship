@@ -29,7 +29,9 @@ class SignUp extends Component {
     this.state = {
       email: '',
       password: '',
-      name: ''
+      name: '',
+      isLoading: true,
+      dataSource: null
     }
   }
 

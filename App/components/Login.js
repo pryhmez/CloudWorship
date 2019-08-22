@@ -32,11 +32,16 @@ class Login extends Component {
     }
   }
 
+saveData = ()=> {
+  alert("moving to signup")
+  this.props.navigation.navigate('SignUp')
+}
+
   render() {
     // console.warn(Img)
     return (
       <View style={styles.container}>
-        <ImageBackground  source={require('../../assets/loginHeaderr.png')} style={styles.headerImg}>
+        <ImageBackground source={require('../../assets/loginHeaderr.png')} style={styles.headerImg}>
           <View style={styles.headerText} >
             <Text style={styles.welcomeBack}>welcome Back</Text>
           </View>
@@ -60,23 +65,24 @@ class Login extends Component {
             placeholderTextColor="#FF84A6"
             ref={(input) => this.password = input}
           />
-           <TouchableOpacity style={styles.forgotPass}>
+          <TouchableOpacity style={styles.forgotPass}>
             <Text style={styles.forgotPasstext} onPress={this.saveData}>{this.props.type}Forgot Password?</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText} onPress={this.saveData}>{this.props.type}SignUp</Text>
+            <Text style={styles.buttonText} onPress={() => this.props.navigation.navigate('Home')}>{this.props.type}SignIn</Text>
           </TouchableOpacity>
         </View>
 
         <View>
-          
-          <TouchableOpacity style={{flexDirection: 'row', margin: 8}}>
-            <Text style={{color: '#FF4C82'}}>NEW USER?</Text>
-            <Text style={{fontWeight:'bold', color: '#970044'}}>  SIGN UP</Text>
+
+          <TouchableOpacity style={{ flexDirection: 'row', margin: 20 }} >
+            <Text style={{ color: '#FF4C82' }} title="Go to Details"
+              onPress={() => this.props.navigation.navigate('SignUp')}>NEW USER?</Text>
+            <Text style={{ fontWeight: 'bold', color: '#970044' }}>  SIGN UP</Text>
           </TouchableOpacity>
           <TouchableOpacity></TouchableOpacity>
-          
+
         </View>
 
       </View>
@@ -120,7 +126,7 @@ const styles = StyleSheet.create({
     height: 300,
     alignItems: 'center',
     justifyContent: 'center',
-   
+
   },
   welcomeBack: {
     color: '#ffffff',
@@ -134,7 +140,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     height: 40,
     width: 300,
-   
+
   },
   forgotPass: {
     alignSelf: 'flex-end',

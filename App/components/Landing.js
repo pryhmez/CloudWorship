@@ -24,6 +24,7 @@ import {
 class Landing extends Component {
 
   render() {
+    setTimeout( () => this.props.navigation.navigate('Login'),1000)
     // console.warn(Img)
     return (
       <View style={styles.container}>

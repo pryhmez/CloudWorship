@@ -37,7 +37,7 @@ class ForgotPassword extends Component {
     // console.warn(Img)
     return (
       <View style={styles.container}>
-        <View style={{flex: 7, marginTop: 30 }}>
+        <View style={{flex: 7, marginTop: 5 }}>
           <View style={styles.header}>
             <Text style={styles.headertext}>Forgot Password?</Text>
             <Image source={require('../../assets/forgotpassimgg.png')} style={styles.headerImg} resizeMode='contain' />
@@ -60,11 +60,11 @@ class ForgotPassword extends Component {
               <Text style={styles.buttonText} onPress={this.saveData}>{this.props.type}Send</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ flex: 1, backgroundColor: 'transparent', }}>
+          {/* <View style={{ flex: 1, backgroundColor: 'transparent', }}>
             <View style={{ flez: 1 }}>
               <Image source={Img} style={{ flex: 1, width: 360, height: 150 }} ></Image>
             </View>
-          </View>
+          </View> */}
         </View>
         <View style={{ flex: 1 }}>
           <Image source={Img} style={{ flex: 1, width: 360, height: 100 }} resizeMode='stretch'></Image>

@@ -27,10 +27,9 @@ class Dashboard extends Component {
     // console.warn(Img)
     return (
         <View style={styles.container}>
-            <View></View>
-            <View></View>
-            <View></View>
-        <Text>hi from login</Text>
+        <Text>hi from Dashboard1</Text>
+        <Text>hi from Dashboard2</Text>
+
         </View>
       );
   }
@@ -40,7 +39,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between"
   },
   
 });
