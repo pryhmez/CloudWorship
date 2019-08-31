@@ -1,7 +1,8 @@
+
 import React from 'react';
 // import { TabNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
-import { createMaterialTopTabNavigator, createAppContainer, createStackNavigator, createBottomTabNavigator, create } from 'react-navigation';
+import { createMaterialTopTabNavigator, createAppContainer, createStackNavigator, createBottomTabNavigator, create, createSwitchNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Landing from '../components/Landing';
 import Login from '../components/Login';
@@ -17,82 +18,9 @@ import Custom from '../components/custom';
 import Container from '../components/Container'
 import UserProfile from '../components/UserProfile';
 
-const Tabs = createMaterialTopTabNavigator({
-  Home: {
-    screen: Dashboard,
-    navigationOptions: () => ({
-      tabBarIcon: /*({tintColor}) => {*/
-          <Custom />
-      // }
-  })
-    
-  },
-  WhatsHot: {
-    screen: WhatsHot
-  },
-  Wallet: {
-    screen: Wallet
-  },
-  Shop: {
-    screen: Shop
-  }
-},
-  {
-    initialRouteName: 'Home',
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
-        const { routeName } = navigation.state;
-        let IconComponent = Ionicons;
-        let iconName;
-        let s = 20;
-        if (routeName === 'Home') {
-          iconName = "ios-home";
-          if(focused) {
-            s = s + 12
-          }
-        } else if (routeName === 'WhatsHot') {
-          iconName = "ios-flame";
-          if(focused) {
-            s = s + 12
-          }
-        } else if (routeName === 'Wallet') {
-          iconName = "ios-wallet";
-          if(focused) {
-            s = s + 12
-          }
-        } else if (routeName === 'Shop') {
-          iconName = "ios-cart";
-          if(focused) {
-            s = s + 12
-          }
-        }
-        return <IconComponent name={iconName} size={s} color={tintColor} />;
-      }
-    }),
-    tabBarOptions: {
-      showIcon: 'true',
-      showLabel: true,
-      activeTintColor: '#ffffff',
-      inactiveTintColor: 'gray',
-      labelStyle: {
-        fontSize: 8
-      },
-      iconStyle: {
-          fontSize: 12
-      },
-      tabStyle: {
-        backgroundColor: "#E5004B"
-      },
-      style: {
-        backgroundColor: "transparent"
-      }
-    },
-  }
-);
-
-const Navs = createStackNavigator({
-  Landing: {
-    screen: Landing,
+export const SignedOut = createStackNavigator({
+  SignUp: {
+    screen: SignUp,
     navigationOptions: {
       header: null
     }
@@ -102,19 +30,15 @@ const Navs = createStackNavigator({
     navigationOptions: {
       header: null
     }
-  },
-  SignUp: {
-    screen: SignUp,
-    navigationOptions: {
-      header: null
-    }
-  },
+  }
+});
+
+export const SignedIn = createStackNavigator({
   Home: {
     screen: Container,
     navigationOptions: {
       header: null
-    },
- 
+    }
   },
   UserProfile: {
     screen: UserProfile,
@@ -122,19 +46,38 @@ const Navs = createStackNavigator({
       header: null
     },
   },
-},
-  {
-    // initialRouteName: 'UserProfile',
-    // defaultNavigationOptions: {
-    //   headerStyle: {
-    //     backgroundColor: '#f4511e',
-    //   },
-    //   headerTintColor: '#fff',
-    //   headerTitleStyle: {
-    //     fontWeight: 'bold',
-    //   },
-    // },
-  });
+});
 
+export const Launched = createStackNavigator({
+  Landing: {
+    screen: Landing,
+    navigationOptions: {
+      header: null
+    }
+  }
+});
 
-export default createAppContainer(Navs);
+export const createRootnavigator = (signedIn = false) => {
+  return createSwitchNavigator(
+    {
+      Launched: {
+        screen: Launched
+      },
+      Next: {
+        screen: signedIn ? SignedIn : SignedOut
+      },
+      Final: {
+        screen: SignedIn 
+      }
+      // SignedIn: {
+      //   screen: SignedIn
+      // },
+      // SignedOut: {
+      //   screen: SignedOut
+      // }
+    },
+    // {
+    //   initialRouteName: signedIn ? "SignedIn" : "SignedOut" 
+    // }
+  );
+};

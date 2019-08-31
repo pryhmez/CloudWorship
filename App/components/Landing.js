@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+
 const Img = require('../../assets/footer.png');
 const Imgg = require('../../assets/Group.png');
 import {
@@ -24,7 +25,8 @@ import {
 class Landing extends Component {
 
   render() {
-    setTimeout( () => this.props.navigation.navigate('Login'),1000)
+    setTimeout( () => {
+      this.props.navigation.navigate('Next') },1000)
     // console.warn(Img)
     return (
       <View style={styles.container}>

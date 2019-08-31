@@ -32,7 +32,7 @@ class UserProfile extends Component {
                 <View style={styles.header}>
                     <Image source={require('../../assets/Statusbarbg.png')} style={styles.headerImg}>
                         <View style={styles.statusBar}>
-                            <TouchableOpacity style={{ marginLeft: 12, marginBottom: 10, width: 50, backgroundColor: 'transparent', elevation: 0, justifyContent: 'center' }}>
+                            <TouchableOpacity style={styles.backButtonStyle} onPress={() => this.props.navigation.goBack()}>
                                 <Ionicons name="ios-arrow-round-back" color='#fee2e9' size={40} />
                             </TouchableOpacity>
                             <Text style={{ fontSize: 24, color: '#ffffff' }}>Juliana James</Text>
@@ -187,7 +187,14 @@ const styles = StyleSheet.create({
         height: 40,
         alignSelf: 'flex-start',
         justifyContent: 'space-between'
-    }
+    },
+    backButtonStyle: { 
+        marginLeft: 12, 
+        marginBottom: 10, 
+        width: 50, 
+        backgroundColor: 'transparent', 
+        elevation: 0, 
+        justifyContent: 'center' }
 
 });
 

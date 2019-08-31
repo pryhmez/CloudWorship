@@ -1,5 +1,11 @@
 
 import React, { Component } from 'react';
+import {onSignUp} from "../config/auth";
+import { connect } from 'react-redux';
+import {signUp} from "../actions"
+import { CLEAR_USER, LOGIN_USER, LOGIN_USER_FAILED, LOGIN_USER_SUCCESS, SET_USER, SIGNUP_USER, SIGNUP_USER_FAILED, SIGNUP_USER_SUCCESS} from '../actions/type'
+
+import { SwitchActions } from 'react-navigation';
 
 import {
   SafeAreaView,
@@ -52,20 +58,21 @@ class SignUp extends Component {
         </View> */}
         <View style={styles.form}>
           <TextInput style={styles.inputBox}
-            onChangeText={(email) => this.setState({ name })}
+            onChangeText={(name) => this.setState({ name })}
             underlineColorAndroid='#A49B95'
             placeholder="Full Name"
             placeholderTextColor="#FF84A6"
             selectionColor="#fff"
             keyboardType="email-address"
-            onSubmitEditing={() => this.password.focus()} />
+            onSubmitEditing={() => this.name.focus()} />
 
           <TextInput style={styles.inputBox}
-            onChangeText={(password) => this.setState({ email })}
+            onChangeText={(email) => this.setState({ email })}
             underlineColorAndroid='#A49B95'
             placeholder="Email"
             secureTextEntry={true}
             placeholderTextColor="#FF84A6"
+            keyboardType="email-address"
             ref={(input) => this.password = input}
           />
           <TextInput style={styles.inputBox}
@@ -74,16 +81,25 @@ class SignUp extends Component {
             placeholder="Password"
             secureTextEntry={true}
             placeholderTextColor="#FF84A6"
-            ref={(input) => this.password = input}
+            ref={(input) => this.email = input}
           />
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText} onPress={this.saveData}>{this.props.type}SignUp</Text>
+            <Text style={styles.buttonText} onPress={sign = () => {
+              this.props.signUp(this.state.name, this.state.name, this.state.email, this.state.password).then(res => alert(JSON.stringify(res) + "bjb"))
+              .then(this.props.navigation.navigate("Final"));
+              // onSignUp().then(() => {
+              //   this.props.navigation.navigate("Final")
+              //   // this.props.navigation.dispatch(SwitchActions.jumpTo({ "Final"}));
+              //   // this.props.navigation.dispatch(SwitchActions.jumpTo("Final"))
+              // })
+              
+            }}>{this.props.type}SignUp</Text>
           </TouchableOpacity>
         </View>
         <View>
           
-          <TouchableOpacity style={{flexDirection: 'row'}}>
+          <TouchableOpacity style={{flexDirection: 'row'}} onPress={ move = () => {this.props.navigation.navigate("Login")}}>
             <Text style={{color: '#FF4C82'}}>Already have an Account?</Text>
             <Text style={{fontWeight:'bold', color: '#970044'}}>  SIGN IN</Text>
           </TouchableOpacity>
@@ -146,4 +162,10 @@ const styles = StyleSheet.create({
 
 });
 
-export default SignUp;
+const mapStateToProps = (state) => {
+  return{
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps, {signUp}) (SignUp);

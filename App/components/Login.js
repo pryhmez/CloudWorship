@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import { TextInput } from 'react-native-gesture-handler';
+import {onSignIn} from "../config/auth"
 const Img = require('../../assets/footer.png');
 const Imgg = require('../../assets/Group.png');
 import {
@@ -37,6 +38,9 @@ saveData = ()=> {
   this.props.navigation.navigate('SignUp')
 }
 
+componentDidMount() {
+  
+}
   render() {
     // console.warn(Img)
     return (
@@ -70,7 +74,7 @@ saveData = ()=> {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText} onPress={this.doLogin}>{this.props.type}SignIn</Text>
+            <Text style={styles.buttonText} onPress={onSignIn().then(() => navigation.navigate(("SignedIn")))}>{this.props.type}SignIn</Text>
           </TouchableOpacity>
         </View>
 
