@@ -9,6 +9,7 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
+import {onSignOut} from "../config/auth";
 
 import {
     Header,
@@ -54,7 +55,7 @@ class Container extends Component {
                         <Text style={{fontWeight: '500', color: '#fee2e9'}}>Shop</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{ flexDirection: "row", justifyContent: 'center', alignItems: 'center', padding: 5 }}>
+                    <TouchableOpacity style={{ flexDirection: "row", justifyContent: 'center', alignItems: 'center', padding: 5 }} onPress={() => {onSignOut().then(this.props.navigation.push("Next"))}}>
                         <Ionicons name="ios-search" color='#fee2e9' size={24} />
                     </TouchableOpacity>
 

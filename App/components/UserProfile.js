@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Container, Content, Button as TouchableOpacity } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { AsyncStorage } from "react-native";
 const Img = require('../../assets/footer.png');
 const Imgg = require('../../assets/Group.png');
 import {
@@ -25,6 +26,30 @@ import {
 
 class UserProfile extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+          email: '',
+          name: 'loading...',
+          cover: "",
+          loading: false
+        }
+      }
+
+    componentDidMount() {
+      this._retrieveData();
+    }
+    _retrieveData = async () => {
+        try{
+            const value = await AsyncStorage.getItem("USER_KEY");
+            let v = JSON.parse(value);
+            this.setState({name: v.name, cover: v.cover_image});
+            console.warn(v.cover_image);
+        }catch (err) {
+            console.warn(err)
+        }
+    }
+
     render() {
         // console.warn(Img)
         return (
@@ -35,7 +60,7 @@ class UserProfile extends Component {
                             <TouchableOpacity style={styles.backButtonStyle} onPress={() => this.props.navigation.goBack()}>
                                 <Ionicons name="ios-arrow-round-back" color='#fee2e9' size={40} />
                             </TouchableOpacity>
-                            <Text style={{ fontSize: 24, color: '#ffffff' }}>Juliana James</Text>
+                            <Text style={{ fontSize: 24, color: '#ffffff' }}> {this.state.name} </Text>
                             <TouchableOpacity style={{ marginRight: 12, marginBottom: 10, fontWeight: 'bold', justifyContent: 'center', width: 60, backgroundColor: 'transparent', elevation: 0 }}>
                                 <Ionicons name="ios-search" color='#fee2e9' size={25}/>
                             </TouchableOpacity>
@@ -46,7 +71,8 @@ class UserProfile extends Component {
                                 <Text style={styles.followText}>Following</Text>
                             </View>
                             <View style={styles.profilepix} >
-                                <Image source={require('../../assets/smallpix.png')} style={{ width: 120, height: '100%', flex: 1, alignSelf: 'center', padding: 5 }} />
+                            {/* require('../../assets/smallpix.png') */}
+                                <Image source={{uri: this.state.cover}} style={{ width: 120, height: '100%', flex: 1, alignSelf: 'center', padding: 5 }} />
                                 <TouchableOpacity style={{
                                     justifyContent: 'center', margin: 5, borderRadius: 10, height: 40, backgroundColor: '#fd9451'
                                 }}>

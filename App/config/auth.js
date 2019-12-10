@@ -1,4 +1,5 @@
 import { AsyncStorage } from "react-native";
+// const {promisify} from "util";
 
 export const USER_KEY = "auth-demo-key";
 
@@ -10,7 +11,7 @@ export const onSignUp = () => AsyncStorage.setItem(USER_KEY, "true")
 
 export const isSignedIn = () => {
     return new Promise((resolve, reject) => {
-        AsyncStorage.getItem(USER_KEY)
+        AsyncStorage.getItem("USER_KEY")
         .then(res => {
             if (res !== null) {
                 resolve(true);

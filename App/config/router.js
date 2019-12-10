@@ -19,14 +19,20 @@ import Container from '../components/Container'
 import UserProfile from '../components/UserProfile';
 
 export const SignedOut = createStackNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      header: null
+    }
+  },
   SignUp: {
     screen: SignUp,
     navigationOptions: {
       header: null
     }
   },
-  Login: {
-    screen: Login,
+  ForgotPassword: {
+    screen: ForgotPassword,
     navigationOptions: {
       header: null
     }
@@ -34,6 +40,12 @@ export const SignedOut = createStackNavigator({
 });
 
 export const SignedIn = createStackNavigator({
+  ChurchSelection: {
+    screen: ChurchSelection,
+    navigationOptions: {
+      header: null
+    }
+  },
   Home: {
     screen: Container,
     navigationOptions: {
@@ -58,13 +70,14 @@ export const Launched = createStackNavigator({
 });
 
 export const createRootnavigator = (signedIn = false) => {
+  console.warn(signedIn.toString())
   return createSwitchNavigator(
     {
       Launched: {
         screen: Launched
       },
       Next: {
-        screen: signedIn ? SignedIn : SignedOut
+        screen: !signedIn ? SignedIn : SignedIn
       },
       Final: {
         screen: SignedIn 
